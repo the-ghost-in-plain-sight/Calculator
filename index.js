@@ -86,7 +86,6 @@ for (let i = 0; i < operators.length; i++) {
         // theFirst = +display.value;
         theOperator = operators[i].textContent;
         let arr = display.value.split(' ').reverse();
-        //if (typeof arr[0] == 'number')
         if (arr[0] == '') {
             arr.shift();
             arr.shift();
@@ -95,7 +94,18 @@ for (let i = 0; i < operators.length; i++) {
             let str = arr.join('');
             display.value = str
         } else{
-            display.value += ' ' + theOperator + ' ';
+            console.log(arr);
+            if (arr.length < 2) {
+                display.value +=' ' + theOperator + ' ';
+            } else {
+                arr.reverse()
+                let tempFirst = +arr[0];
+                let tempSecond = +arr[2];
+                let tempOperator = arr[1];
+                let sum = operate(tempFirst, tempOperator, tempSecond);
+                display.value = sum + ' ' + theOperator + ' ';
+                
+            }
         }
     })
 }
