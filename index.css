@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: burlywood;
+}
+
+h1{
+    text-align: center;
+}
+
+.all{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*width: 250px;
+    height: 300px; */
+    border: 1px solid black;
+    background-color: darkgray;
+}
+
+.calcName{
+    width: 222px;
+    text-align: center;
+    background-color: darkolivegreen;
+    height: 40px;
+}
+
+.display{
+    width: 222px;
+    text-align: right;
+    height: 40px;
+}
+
+button{
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+}
+
+.theNumbers{
+    display: flex;
+    width: 134px;
+    flex-wrap: wrap;
+}
+
+.allOperators{
+    display: flex;
+    flex-direction: column;
+}
+
+.actionButtons{
+    display: flex;
+    flex-direction: column;
+}
+
+.allButtons{
+    display: flex;
+}
+
+.equal{
+    height: 84px;
+}
+
+.zero{
+    width: 84px;
+}
+
+.clear, .back{
+    background-color: red;
+}
