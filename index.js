@@ -60,14 +60,19 @@ for (let i = 0; i < numbers.length; i++) {
 
 // the function that adds dot to the display
 dot.addEventListener('click', function () {
-    let dis = '';
-    dis += display.value;
-    let arr = dis.split('');
-    if (arr.includes('.')) {
-        dis = '';
-        arr = [];
+    let arr = display.value.split(' ');
+    if (arr.length == 1) {
+        if (!(arr[0].split('').includes('.'))) {
+            display.value += '.';
+        }
     } else {
-        display.value += '.';
+        if (arr[2] == '') {
+            display.value += '0.';
+        } else {
+            if (!(arr[2].split('').includes('.'))) {
+                display.value += '.';
+            }
+        }
     }
 })
 
@@ -83,7 +88,6 @@ zero.addEventListener('click', function () {
 // the function that reads the type of operator
 for (let i = 0; i < operators.length; i++) {
     operators[i].addEventListener("click", function () {
-        // theFirst = +display.value;
         theOperator = operators[i].textContent;
         let arr = display.value.split(' ').reverse();
         if (arr[0] == '') {
