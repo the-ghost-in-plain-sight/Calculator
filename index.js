@@ -83,9 +83,20 @@ zero.addEventListener('click', function () {
 // the function that reads the type of operator
 for (let i = 0; i < operators.length; i++) {
     operators[i].addEventListener("click", function () {
-        theFirst = +display.value;
+        // theFirst = +display.value;
         theOperator = operators[i].textContent;
-        display.value += ' ' + theOperator + ' ';
+        let arr = display.value.split(' ').reverse();
+        //if (typeof arr[0] == 'number')
+        if (arr[0] == '') {
+            arr.shift();
+            arr.shift();
+            arr.unshift(` ${ theOperator} `);
+            arr.reverse();
+            let str = arr.join('');
+            display.value = str
+        } else{
+            display.value += ' ' + theOperator + ' ';
+        }
     })
 }
 
@@ -94,8 +105,12 @@ equal.addEventListener('click', function () {
     if (theOperator == '') {
         return display.value = display.value;
     }
-    if (theSecond == 0) {
+    let arr = display.value.split(' ');
+    theFirst = +arr[0];
+    if (arr[2] == '') {
         theSecond = theFirst;
+    } else {
+        theSecond = +arr[2];
     }
     display.value = +operate(theFirst, theOperator, theSecond);
     theSecond = 0;
