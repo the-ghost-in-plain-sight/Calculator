@@ -94,7 +94,6 @@ for (let i = 0; i < operators.length; i++) {
             let str = arr.join('');
             display.value = str
         } else{
-            console.log(arr);
             if (arr.length < 2) {
                 display.value +=' ' + theOperator + ' ';
             } else {
