@@ -43,7 +43,6 @@ let back = document.querySelector('.back');
 // the function that display the numbers
 for (let i = 0; i < numbers.length; i++) {
     numbers[i].addEventListener("click", function () {
-        
         display.value += numbers[i].textContent;
         let arr = display.value.split('');
         if ((arr.length == 2) && (arr[0] == 0)) {
@@ -51,9 +50,7 @@ for (let i = 0; i < numbers.length; i++) {
             display.value = placeHolder;
         } else {
             display.value = display.value;
-        }
-        
-        
+        }  
     })
 }
 
@@ -130,6 +127,7 @@ equal.addEventListener('click', function () {
     theOperator = '';
 })
 
+// reset all value to zero
 clear.addEventListener('click', function () {
     display.value = 0;
     theFirst = 0;
@@ -137,6 +135,7 @@ clear.addEventListener('click', function () {
     theSecond = 0;
 })
 
+// removes the last item added
 back.addEventListener('click', function () {
     let arr = display.value.split('');
     if (arr.length == 1) {
